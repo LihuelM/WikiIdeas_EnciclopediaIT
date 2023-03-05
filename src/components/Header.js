@@ -1,45 +1,51 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import imgLogo from "../images/logos/Vector.svg";
+import { useState } from 'react';
+import imgLogo from '../images/logos/Vector.svg';
+import '../index.css';
 
 
+function Header() {
 
-const Header = () => {
-  return (
-    <Navbar bg="light" expand="lg">
-    <Container>
-      <Navbar.Brand href="#home">
-        <img
-          src={imgLogo}
-          width="100"
-          height="100"
-          className="d-inline-block align-top"
-          alt="WikiIdeas logo"
-        />
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Inicio</Nav.Link>
-          <Nav.Link href="#link">Nosotros</Nav.Link>
-          <NavDropdown title="Categorias" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">FrontEnd</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">BackEnd</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Diseño UX y UI</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">Test</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.5">
-              Genera tu Propia Categoría
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
+//Funcion para Toggler
+  const [isOpen, setIsOpen] = useState(false);
+
+//   const navHamb = () => {
+//     active === 'navUl'
+//     ? setActive('navUl navActive')
+//     : setActive('navUl')
+//   }
+
+// //Funcion API
+
+//   const [data, setData] = useState(null);
+
+// //hook para hacer la peticion http
+//   useEffect(() => {
+//     fetch("https://serviceone.onrender.com/apiWikiIdeasV1d/getPublicationbyCategory/IA") ///este link devuelve una promesa
+//       .then ((response) => response.json()) //cuando tengamos la respuesta pasarla a json
+//       .then((data) => setData(data));//
+//   }, []); //array vacio[], se ejecutara una vez cuando se llame el componente
+
+  return(
+    <nav className='nav'>
+      <div className='nav__container--logo'>
+        <a href='/src/components'> 
+          <img src={imgLogo}
+            className='nav__logo' 
+            alt='logo_wikiIdeas'/> 
+        </a>
+      </div>
+      <div className={`nav--toggler ${isOpen && "open"}`} onClick={ () => setIsOpen(!isOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div className={`nav__container--menu ${isOpen && "open"}`}>
+        <a href='/'>FrontEnd</a>
+        <a href='/'>BackEnd</a>
+        <a href='/LICENSE'>UX & UI Desing</a>
+      </div>
+    </nav>
   );
 }
-
 export default Header;

@@ -8,7 +8,13 @@
   padding: 0;
 }
 
+html {
+  font-size: 62.5%;
+  /* background-color: var(--color-white); */
+}
+
 body {
+  font-size: 1.6rem;
   font-family: "Urbanist", sans-serif;
 }
 
@@ -30,32 +36,89 @@ body {
   --font-weight-regular: 400;
 }
 
-html {
-  background-color: var(--color-white);
-}
-
 h1 {
-  font-size: 40px;
+  font-size: 3rem;
 }
 h2 {
-  font-size: 32px;
+  font-size: 2rem;
 }
 h3 {
-  font-size: 28px;
+  font-size: 1.8rem;
 }
 h4 {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 h5 {
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 h6 {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 /* Header */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-acento2);
+}
+.nav__container--logo{
+  display: flex;
+  justify-content: center;
+}
+nav img {
+  width: 100px;
+  margin: 1.5rem;
+}
+.nav__container--menu a {
+  margin: 1.5rem;
+  color: var(--color-acento);
+  position: relative;
+  text-decoration: none;
+}
+.nav--toggler {
+  display: none;
+}
 
-nav {
-  background-color: var(--color-acento);
-  height: 150px;
+@media (max-width: 768px) {
+  .nav__container--menu {
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    left: 0;
+    background-color: var(--color-acento2);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: 0.3s ease all;
+  }
+  .nav__container--menu .open {
+    transform: translateX(0) !important;
+  }
+  .nav--toggler {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+  }
+  .nav--toggler span {
+    justify-content: flex-end;
+    width: 30px;
+    height: 4px;
+    background-color: var(--color-acento);
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transform-origin: 5px 0px;
+    transition: all 0.2s linear;
+  }
+  .nav--toggler.open > span {
+    transform: rotate(45deg) translate(0px 0px);
+  }
+  .nav--toggler.open > span:nth-child(2){
+    display: none;
+  }
+  .nav--toggler.open > span:nth-child(3){
+    transform: rotate(-45deg) translate(-5px 1px);
+  }
 }
