@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import BarraDeBusqueda from './components/BarraDeBusqueda';
-// import Categorias from './components/Categorias';
+
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header/>
       <BarraDeBusqueda />
-      {/* <Categorias> Categorias </Categorias> */}
+      
     </div>
   );
 }
