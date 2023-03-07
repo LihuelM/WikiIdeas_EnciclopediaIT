@@ -8,7 +8,13 @@
   padding: 0;
 }
 
+html {
+  font-size: 62.5%;
+  /* background-color: var(--color-white); */
+}
+
 body {
+  font-size: 1.6rem;
   font-family: "Urbanist", sans-serif;
 }
 
@@ -30,32 +36,21 @@ body {
   --font-weight-regular: 400;
 }
 
-html {
-  background-color: var(--color-white);
-}
-
 h1 {
-  font-size: 40px;
+  font-size: 3rem;
 }
 h2 {
-  font-size: 32px;
+  font-size: 2rem;
 }
 h3 {
-  font-size: 28px;
+  font-size: 1.8rem;
 }
 h4 {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 h5 {
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 h6 {
-  font-size: 16px;
-}
-
-/* Header */
-
-nav {
-  background-color: var(--color-acento);
-  height: 150px;
+  font-size: 1rem;
 }
