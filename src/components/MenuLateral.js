@@ -1,7 +1,13 @@
 import React from 'react';
 import '../index.css';
 import '../styles/Header.css';
-import Categorias from "./Categorias";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import SobreNosotros from '../pages/SobreNosotros';
+import Soporte from '../pages/Soporte';
+import Configuracion from '../pages/Configuracion';
+import Comunidad from '../pages/Comunidad';
+import NotFound from '../pages/NotFound';
+
 
 //Logica 
 //1 Utilizamos el operador ternario
@@ -11,13 +17,21 @@ import Categorias from "./Categorias";
 
 const MenuLateral = ({isOpen, toggleMenu, categoria}) => {
 
-    return (
-        <div className={`sidebar ${isOpen ? "open" : ""}`}>
-                <i onClick={toggleMenu} className="bi bi-arrow-left fs-1"> Categorias </i>
-                
-                <Categorias/>
-        </div>
-    );
+  return (
+    <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      <i onClick={toggleMenu} className="bi bi-arrow-left fs-1"></i>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/Comunidad' element={<Comunidad />} >Comunidad</Route>
+          <Route exact path='/SobreNosotros' element={<SobreNosotros/>} >SobreNosotros</Route>
+          <Route exact path='/Soporte' element={<Soporte/>} >Soporte</Route>
+          <Route exact path='/Configuracion' element={<Configuracion/>} >Configuracion</Route>
+          <Route path = '*' element={<NotFound/>}/>
+        </Routes>
+      </BrowserRouter>
+      
+    </div>
+  );
 }
 
 export default MenuLateral;
