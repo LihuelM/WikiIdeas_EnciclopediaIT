@@ -1,5 +1,11 @@
 import React from 'react';
 
-const Configuracion = () => <h1>Configuración</h1>
+function Configuracion() {
+  return (
+    <div className='configuracion'>
+      <h1>Configuración</h1>
+    </div>
+  );
+}
 
 export default Configuracion;
