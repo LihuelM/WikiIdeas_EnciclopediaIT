@@ -1,5 +1,11 @@
 import React from 'react';
 
-const Comunidad = () => <h1>Comunidad</h1>
+function Comunidad() {
+  return (
+    <div className='comunidad'>
+      <h1>Comunidad</h1>
+    </div>
+  );
+}
 
 export default Comunidad;

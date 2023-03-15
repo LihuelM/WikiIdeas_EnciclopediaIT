@@ -1,5 +1,11 @@
 import React from 'react';
 
-const Soporte = () => <h1>Soporte</h1>
+function Soporte() {
+  return (
+    <div className='soporte'>
+      <h1>Soporte</h1>
+    </div>
+  );
+}
 
 export default Soporte;
