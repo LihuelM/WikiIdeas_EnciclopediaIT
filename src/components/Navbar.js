@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
-import '../styles/Navbar.css';
 import { IconContext } from 'react-icons';
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
 import imgLogo from '../images/logos/Vector.svg';
+import '../styles/Navbar.css';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -16,8 +16,8 @@ function Navbar() {
     <>
     <IconContext.Provider value={{ color: '#121212'}}>
       <div className='navbar'>
-        <Link to='#' className='menu-bars'>
-          <FaIcons.FaBars onClick={showSidebar} />
+        <Link to='#' className='link nav__menu--burger'>
+          <FaIcons.FaBars className='icon nav__menu--burger' onClick={showSidebar} />
         </Link>
 
         <div className='nav__container--logo'>
@@ -26,6 +26,12 @@ function Navbar() {
               className='nav__logo' 
               alt='logo_wikiIdeas'/> 
           </a>
+        </div>
+
+        <div className='nav__container--search'>
+          <Link to='#' className='link nav__search'>
+            <AiIcons.AiOutlineSearch className='icon nav__search'/>
+          </Link>
         </div>
       </div>
 
