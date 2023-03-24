@@ -1,0 +1,7 @@
+/* Barra de Búsqueda */
+.search-bar {
+  margin: 2.5rem;
+}
+.form-control {
+  background-color: var(--color-white) !important;
+}

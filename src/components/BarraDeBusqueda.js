@@ -1,16 +1,21 @@
 import React from 'react';
+import '../styles/BarraDeBusqueda.css';
+import { FaSearch } from 'react-icons/fa';
 
-const BarraDeBusqueda = () => {
+function BarraDeBusqueda() {
   return (
-    <div className='barraDeBusqueda'>
-      <form className="d-flex mx-auto pt-2 w-75 " role="search">
-        <input className='form-control rounded-pill  '
-          type="search" 
-          placeholder="Buscar" 
-          aria-label="Search">
-          {/* <i className="bi bi-search"> </i> */}
-        </input>
-      </form>
+    <div className="search-bar">
+      <input
+        className="form-control rounded-pill"
+        type="search"
+        placeholder="Buscar"
+        style={{
+          backgroundImage: `url(${FaSearch})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'right center',
+          paddingLeft: '2rem',
+        }}
+      />
     </div>
   );
 }
